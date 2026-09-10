@@ -1,21 +1,23 @@
-# Engenharia Segura — Site v2.1
+# Engenharia Segura — versão 2.2
 
-Versão 2.1 do site do projeto Engenharia Segura.
-
-## Melhorias desta versão
-- Botão “Solicitar consultoria”
-- Seção de credenciais profissionais
-- Rodapé com contatos principais
-- Espaço preparado para foto profissional
-- Logo e estrutura refinados
+Versão estática pronta para GitHub Pages.
 
 ## Arquivos
-- index.html
-- styles.css
-- script.js
-- logo.svg
-- avatar-artur.svg
+- `index.html`
+- `style.css`
+- `assets/engenharia-segura-v2-2.png`
 
-## Observação
-O `logo.svg` e o `avatar-artur.svg` são provisórios e podem ser substituídos
-pelo logotipo oficial e pela foto profissional quando você quiser.
+## Publicar no GitHub Pages
+1. Envie estes arquivos para a raiz do repositório.
+2. No GitHub, abra **Settings > Pages**.
+3. Em **Build and deployment**, escolha **Deploy from a branch**.
+4. Selecione a branch `main` e a pasta `/ (root)`.
+5. Salve.
+
+## Antes de publicar
+Edite no `index.html`:
+- `SEUEMAIL@EXEMPLO.COM`
+- `55SEUNUMERO`
+
+O link do YouTube já aponta para:
+`https://www.youtube.com/@engenhariasemrisco`
