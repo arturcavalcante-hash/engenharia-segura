@@ -1,23 +1,13 @@
-# Engenharia Segura — versão 2.2
+# Engenharia Segura — versão 2.2.3
 
-Versão estática pronta para GitHub Pages.
+Atualização da página para melhorar a navegação e a apresentação de Artur Cavalcante.
 
-## Arquivos
-- `index.html`
-- `style.css`
-- `assets/engenharia-segura-v2-2.png`
+Principais mudanças:
+- Menu "Sobre" alterado para "Sobre mim";
+- nova seção "Sobre mim" separada de "Artigos";
+- apresentação profissional, áreas de atuação e propósito do Engenharia Segura;
+- botões para Conteúdos e Contato;
+- imagem limpa no Hero;
+- arquivos básicos de SEO mantidos.
 
-## Publicar no GitHub Pages
-1. Envie estes arquivos para a raiz do repositório.
-2. No GitHub, abra **Settings > Pages**.
-3. Em **Build and deployment**, escolha **Deploy from a branch**.
-4. Selecione a branch `main` e a pasta `/ (root)`.
-5. Salve.
-
-## Antes de publicar
-Edite no `index.html`:
-- `SEUEMAIL@EXEMPLO.COM`
-- `55SEUNUMERO`
-
-O link do YouTube já aponta para:
-`https://www.youtube.com/@engenhariasemrisco`
+Pronto para publicação no GitHub/Azure Static Web Apps.
