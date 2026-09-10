@@ -1,13 +1,19 @@
-# Engenharia Segura — versão 2.2.3
+# Engenharia Segura — versão 2.2.8
 
-Atualização da página para melhorar a navegação e a apresentação de Artur Cavalcante.
+Atualização dinâmica mais perceptível, sem mudar o layout principal.
 
-Principais mudanças:
-- Menu "Sobre" alterado para "Sobre mim";
-- nova seção "Sobre mim" separada de "Artigos";
-- apresentação profissional, áreas de atuação e propósito do Engenharia Segura;
-- botões para Conteúdos e Contato;
-- imagem limpa no Hero;
-- arquivos básicos de SEO mantidos.
+Mudanças:
+- leve movimento/zoom no Hero;
+- faixa dinâmica com temas técnicos;
+- efeito de brilho nos botões;
+- destaque animado no botão principal;
+- cards com efeito mais visível ao passar o mouse;
+- indicador de conteúdo em atualização;
+- seção de vídeos da versão 2.2.7 mantida.
 
-Pronto para publicação no GitHub/Azure Static Web Apps.
+Não foram alterados:
+- estrutura principal;
+- fundo da mina;
+- foto;
+- cores-base;
+- textos principais.
