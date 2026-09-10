@@ -1,0 +1,8 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 180 180" role="img" aria-labelledby="title desc">
+  <title id="title">Avatar provisório de Artur Cavalcante</title>
+  <desc id="desc">Ilustração simples para marcar o local da futura foto profissional.</desc>
+  <rect x="2" y="2" width="176" height="176" rx="24" fill="#F7F9FC" stroke="#E5E7EB" stroke-width="4"/>
+  <circle cx="90" cy="66" r="28" fill="#D8DEE9"/>
+  <path d="M44 145c10-24 31-37 46-37s36 13 46 37" fill="#D8DEE9"/>
+  <text x="90" y="165" text-anchor="middle" font-family="Arial, sans-serif" font-size="12" font-weight="700" fill="#667085">FOTO PROFISSIONAL</text>
+</svg>
