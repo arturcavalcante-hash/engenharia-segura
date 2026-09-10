@@ -1,0 +1,7 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 120 120" role="img" aria-labelledby="title desc">
+  <title id="title">Engenharia Segura</title>
+  <desc id="desc">Marca circular estilizada para o site Engenharia Segura.</desc>
+  <circle cx="60" cy="60" r="56" fill="#111827" stroke="#F28C28" stroke-width="8"/>
+  <path d="M37 70 L54 42 L51 58 H66 L48 86 L52 70 Z" fill="#F8B84E"/>
+  <text x="60" y="101" text-anchor="middle" font-family="Arial, sans-serif" font-size="13" font-weight="700" fill="#ffffff">SEGURA</text>
+</svg>

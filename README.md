@@ -1,15 +1,19 @@
-# Engenharia Segura — Site v1
+# Engenharia Segura — Site v2
 
-Primeira versão do site institucional do projeto Engenharia Segura.
+Segunda versão do site do projeto Engenharia Segura.
+
+## Melhorias desta versão
+- Cabeçalho e hero mais profissionais
+- Seção “Quem é Artur Cavalcante”
+- Melhor posicionamento comercial do projeto
+- Novo logotipo provisório em `logo.svg`
+- Estrutura pronta para continuar evoluindo
 
 ## Arquivos
-- `index.html` — página principal
-- `styles.css` — visual e responsividade
-- `script.js` — ano automático no rodapé
+- `index.html`
+- `styles.css`
+- `script.js`
+- `logo.svg`
 
-## Publicação
-O site foi preparado para hospedagem estática e pode ser publicado no Azure Static Web Apps.
-
-## Observação
-Nesta primeira versão, o logotipo foi representado por um marcador "ES".
-Na próxima revisão, ele pode ser substituído pelo logotipo oficial do canal.
+## Próximo passo sugerido
+Publicar esta versão no GitHub substituindo os arquivos atuais do repositório.
