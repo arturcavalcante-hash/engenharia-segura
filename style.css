@@ -516,3 +516,114 @@ body .dynamic-strip .dynamic-track span::after{
 @media(max-width:900px){
   .featured-video-grid{grid-template-columns:1fr}
 }
+
+
+/* Versão 2.2.18 — contato comercial forte */
+.contact-strong{
+  background:#0b0e11;
+  color:#fff;
+  padding:64px 4%;
+  display:grid;
+  grid-template-columns:1.15fr .85fr;
+  gap:42px;
+  align-items:center;
+}
+.contact-copy h2{
+  font-size:40px;
+  line-height:1.08;
+  margin:8px 0 16px;
+}
+.contact-copy > p{
+  max-width:680px;
+  color:#c9c9c9;
+  font-size:17px;
+  line-height:1.6;
+}
+.contact-points{
+  display:flex;
+  flex-wrap:wrap;
+  gap:12px;
+  margin-top:24px;
+}
+.contact-points span{
+  background:#161a1f;
+  border:1px solid #252a30;
+  padding:10px 13px;
+  border-radius:8px;
+  color:#fff;
+  font-weight:700;
+  font-size:13px;
+}
+.contact-panel{
+  background:#15191e;
+  border:1px solid #2a2f35;
+  border-top:4px solid #ff7a00;
+  border-radius:16px;
+  padding:26px;
+  box-shadow:0 14px 34px rgba(0,0,0,.25);
+}
+.contact-panel h3{
+  font-size:24px;
+  margin:0 0 18px;
+}
+.contact-channel{
+  display:flex;
+  align-items:center;
+  gap:14px;
+  background:#0f1216;
+  border:1px solid #2a2f35;
+  border-radius:10px;
+  padding:14px;
+  margin-bottom:12px;
+  transition:transform .2s ease, border-color .2s ease;
+}
+.contact-channel:hover{
+  transform:translateY(-2px);
+  border-color:#ff7a00;
+}
+.contact-channel-icon{
+  font-size:24px;
+}
+.contact-channel strong,
+.contact-channel small{
+  display:block;
+}
+.contact-channel strong{
+  color:#fff;
+  margin-bottom:3px;
+}
+.contact-channel small{
+  color:#bdbdbd;
+}
+.contact-quote-btn{
+  display:flex;
+  justify-content:center;
+  align-items:center;
+  min-height:52px;
+  margin-top:16px;
+  background:#ff7a00;
+  color:#111;
+  border-radius:9px;
+  font-weight:900;
+  text-transform:uppercase;
+  letter-spacing:.2px;
+  transition:transform .2s ease, filter .2s ease;
+}
+.contact-quote-btn:hover{
+  transform:translateY(-2px);
+  filter:brightness(1.05);
+}
+.contact-note{
+  margin:14px 0 0;
+  color:#9fa4aa;
+  font-size:12px;
+  line-height:1.45;
+}
+@media(max-width:900px){
+  .contact-strong{
+    grid-template-columns:1fr;
+  }
+  .contact-copy h2{
+    font-size:32px;
+  }
+}
