@@ -1,9 +1,13 @@
-# Engenharia Segura — versão 2.2.9
+# Engenharia Segura — versão 2.2.11
 
-Correção do Hero sem alterar o layout.
+Correção pontual do menu **Sobre mim**.
 
-- fundo da mina + foto restaurados;
-- título completo restaurado;
-- contraste do texto corrigido;
-- animação do próprio Hero removida;
-- faixa dinâmica, cards, botões e vídeos mantidos.
+- Menu aponta para `#sobre`;
+- seção de destino possui `id="sobre"`;
+- links relacionados a conhecer Artur apontam para `#sobre`;
+- adicionado `scroll-margin-top` para a seção não ficar escondida pelo cabeçalho;
+- nenhum layout foi alterado.
+
+Verificação:
+- link do menu: OK
+- seção `#sobre`: OK
