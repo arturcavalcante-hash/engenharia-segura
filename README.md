@@ -1,14 +1,16 @@
-# Engenharia Segura — versão 2.2.15
+# Engenharia Segura — versão 2.2.16
 
-Refeito o logotipo do cabeçalho usando o logotipo oficial enviado pelo usuário.
+Passo 2 da monetização: seção de Serviços.
 
-Mudanças:
-- removido o ícone simples antigo;
-- inserido o emblema oficial da marca no cabeçalho;
-- mantido o nome ENGENHARIA SEGURA e o slogan no mesmo layout;
-- não foram alterados Hero, fundo da mina, foto ou demais seções.
+Incluído:
+- Consultoria em NR-10 e Segurança Elétrica;
+- Estudo de Energia Incidente;
+- Treinamentos e Palestras Técnicas;
+- botão “Quero conversar” em cada serviço;
+- cada botão abre o WhatsApp com mensagem específica.
 
-Arquivos principais:
-- index.html
-- style.css
-- assets/logo-oficial-emblema.png
+Não alterado:
+- Hero;
+- fundo da mina;
+- foto;
+- identidade visual principal.
