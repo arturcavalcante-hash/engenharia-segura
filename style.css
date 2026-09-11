@@ -308,3 +308,47 @@ body .dynamic-strip .dynamic-track span::after{
   transform:none !important;
   visibility:visible !important;
 }
+
+
+/* Versão 2.2.15 — cabeçalho com logotipo oficial */
+.brand{
+  display:flex;
+  align-items:center;
+  gap:12px;
+  min-width:330px;
+}
+.brand-emblem{
+  width:56px;
+  height:56px;
+  border-radius:50%;
+  object-fit:cover;
+  display:block;
+  box-shadow:0 0 0 1px rgba(255,255,255,.06);
+}
+.brand-text{
+  display:flex;
+  flex-direction:column;
+  line-height:1;
+}
+.brand-text strong,
+.brand-text b{
+  font-size:18px;
+  letter-spacing:.2px;
+}
+.brand-text strong{color:#fff}
+.brand-text b{color:#ff7a00}
+.brand-text small{
+  margin-top:4px;
+  color:#fff;
+  font-size:10px;
+  letter-spacing:.4px;
+}
+@media(max-width:1100px){
+  .brand{min-width:auto}
+}
+@media(max-width:700px){
+  .brand-emblem{width:48px;height:48px}
+  .brand-text strong,
+  .brand-text b{font-size:16px}
+  .brand-text small{font-size:9px}
+}

@@ -1,9 +1,14 @@
-# Engenharia Segura — versão 2.2.13
+# Engenharia Segura — versão 2.2.15
 
-Correção robusta do botão “Sobre mim”.
+Refeito o logotipo do cabeçalho usando o logotipo oficial enviado pelo usuário.
 
-- o link continua apontando para `#sobre`;
-- clique agora força rolagem suave até a seção;
-- compensa a altura do cabeçalho;
-- garante que a seção fique visível mesmo com animações;
-- nenhuma mudança de layout.
+Mudanças:
+- removido o ícone simples antigo;
+- inserido o emblema oficial da marca no cabeçalho;
+- mantido o nome ENGENHARIA SEGURA e o slogan no mesmo layout;
+- não foram alterados Hero, fundo da mina, foto ou demais seções.
+
+Arquivos principais:
+- index.html
+- style.css
+- assets/logo-oficial-emblema.png
