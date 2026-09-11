@@ -18,7 +18,7 @@
 
     <nav class="nav">
       <a href="#inicio">Início</a>
-      <a href="#sobre">Sobre mim</a>
+      <a id="sobre-link" href="#sobre">Sobre mim</a>
       <a href="#consultoria">Consultoria</a>
       <a href="#treinamentos">Treinamentos</a>
       <a href="#conteudos">Conteúdos</a>
@@ -225,6 +225,34 @@
     } else {
       revealItems.forEach((item) => item.classList.add('is-visible'));
     }
+  </script>
+
+
+  <script>
+    document.addEventListener('DOMContentLoaded', function () {
+      const sobreLink = document.getElementById('sobre-link');
+      const sobreSection = document.getElementById('sobre');
+
+      if (sobreLink && sobreSection) {
+        sobreLink.addEventListener('click', function (event) {
+          event.preventDefault();
+
+          // Garante visibilidade mesmo se a animação reveal ainda não tiver disparado.
+          sobreSection.classList.add('is-visible');
+
+          const header = document.querySelector('.topbar');
+          const headerHeight = header ? header.offsetHeight : 80;
+          const targetY = sobreSection.getBoundingClientRect().top + window.pageYOffset - headerHeight - 12;
+
+          window.scrollTo({
+            top: targetY,
+            behavior: 'smooth'
+          });
+
+          history.replaceState(null, '', '#sobre');
+        });
+      }
+    });
   </script>
 
 </body>

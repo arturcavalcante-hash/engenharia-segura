@@ -248,3 +248,63 @@ to{transform:scale(1.05)}
 
 /* Correção 2.2.11 — navegação Sobre mim */
 #sobre{scroll-margin-top:90px}
+
+
+/* Versão 2.2.12 — correção definitiva da faixa abaixo do Hero */
+body .dynamic-strip{
+  width:100% !important;
+  min-height:48px !important;
+  display:flex !important;
+  align-items:center !important;
+  overflow:hidden !important;
+  background:#0b0e11 !important;
+  color:#ffffff !important;
+  border-top:1px solid #24282d !important;
+  border-bottom:1px solid #24282d !important;
+}
+
+body .dynamic-strip .dynamic-track{
+  display:inline-flex !important;
+  align-items:center !important;
+  min-width:max-content !important;
+  white-space:nowrap !important;
+  padding:13px 0 !important;
+  gap:0 !important;
+  background:transparent !important;
+  animation:marquee-fixed 28s linear infinite !important;
+}
+
+body .dynamic-strip .dynamic-track span{
+  display:inline-flex !important;
+  align-items:center !important;
+  color:#ffffff !important;
+  font-size:14px !important;
+  font-weight:800 !important;
+  line-height:1 !important;
+  margin-right:32px !important;
+  opacity:1 !important;
+  visibility:visible !important;
+}
+
+body .dynamic-strip .dynamic-track span::after{
+  content:"•" !important;
+  color:#ff7a00 !important;
+  margin-left:32px !important;
+  opacity:1 !important;
+}
+
+@keyframes marquee-fixed{
+  from{transform:translateX(0)}
+  to{transform:translateX(-38%)}
+}
+
+
+/* Versão 2.2.13 — correção robusta do Sobre mim */
+#sobre{
+  scroll-margin-top:92px;
+}
+#sobre:target{
+  opacity:1 !important;
+  transform:none !important;
+  visibility:visible !important;
+}

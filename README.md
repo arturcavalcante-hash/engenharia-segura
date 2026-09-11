@@ -1,13 +1,9 @@
-# Engenharia Segura — versão 2.2.11
+# Engenharia Segura — versão 2.2.13
 
-Correção pontual do menu **Sobre mim**.
+Correção robusta do botão “Sobre mim”.
 
-- Menu aponta para `#sobre`;
-- seção de destino possui `id="sobre"`;
-- links relacionados a conhecer Artur apontam para `#sobre`;
-- adicionado `scroll-margin-top` para a seção não ficar escondida pelo cabeçalho;
-- nenhum layout foi alterado.
-
-Verificação:
-- link do menu: OK
-- seção `#sobre`: OK
+- o link continua apontando para `#sobre`;
+- clique agora força rolagem suave até a seção;
+- compensa a altura do cabeçalho;
+- garante que a seção fique visível mesmo com animações;
+- nenhuma mudança de layout.
