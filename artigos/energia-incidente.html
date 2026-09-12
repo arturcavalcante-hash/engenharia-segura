@@ -1,0 +1,312 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Arco elétrico e energia incidente: riscos, proteção e aplicação na mineração | Engenharia Segura</title>
+  <meta name="description" content="Entenda o que é energia incidente, como ocorre o arco elétrico, quais os principais riscos e por que a avaliação é fundamental em instalações industriais e na mineração." />
+  <link rel="canonical" href="https://www.engenhariasegura.eng.br/artigos/energia-incidente.html" />
+  <style>
+    :root {
+      --bg: #0b0b0b;
+      --card: #151515;
+      --text: #f4f4f4;
+      --muted: #c7c7c7;
+      --accent: #ff7a00;
+      --accent2: #ff9d2e;
+      --line: #2b2b2b;
+      --green: #25d366;
+      --max: 980px;
+    }
+    * { box-sizing: border-box; }
+    html { scroll-behavior: smooth; }
+    body {
+      margin: 0;
+      font-family: Arial, Helvetica, sans-serif;
+      background: #f5f5f5;
+      color: #1a1a1a;
+      line-height: 1.65;
+    }
+    .topbar {
+      background: var(--bg);
+      color: var(--text);
+      border-bottom: 3px solid var(--accent);
+      padding: 18px 20px;
+    }
+    .topbar .wrap {
+      max-width: var(--max);
+      margin: 0 auto;
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      gap: 20px;
+    }
+    .brand {
+      font-weight: 800;
+      letter-spacing: .5px;
+      font-size: 1.1rem;
+    }
+    .brand span { color: var(--accent); }
+    .home-link {
+      color: #fff;
+      text-decoration: none;
+      font-weight: 700;
+      font-size: .95rem;
+    }
+    .hero {
+      background: linear-gradient(135deg, #111, #242424);
+      color: #fff;
+      padding: 64px 20px 54px;
+    }
+    .hero .wrap {
+      max-width: var(--max);
+      margin: 0 auto;
+    }
+    .eyebrow {
+      display: inline-block;
+      color: var(--accent2);
+      font-weight: 800;
+      text-transform: uppercase;
+      letter-spacing: 1px;
+      font-size: .82rem;
+      margin-bottom: 10px;
+    }
+    h1 {
+      font-size: clamp(2rem, 5vw, 3.4rem);
+      line-height: 1.08;
+      margin: 0 0 18px;
+      max-width: 900px;
+    }
+    .hero p {
+      max-width: 820px;
+      color: #d7d7d7;
+      font-size: 1.08rem;
+      margin: 0;
+    }
+    main {
+      max-width: var(--max);
+      margin: 0 auto;
+      padding: 42px 20px 70px;
+    }
+    article {
+      background: #fff;
+      border-radius: 16px;
+      padding: clamp(24px, 4vw, 46px);
+      box-shadow: 0 8px 30px rgba(0,0,0,.08);
+    }
+    h2 {
+      font-size: 1.7rem;
+      line-height: 1.2;
+      margin-top: 2.1em;
+      margin-bottom: .7em;
+      color: #111;
+    }
+    h2:first-of-type { margin-top: .2em; }
+    h3 {
+      font-size: 1.2rem;
+      margin-top: 1.5em;
+      color: #222;
+    }
+    p { margin: 0 0 1.1em; }
+    .highlight {
+      border-left: 5px solid var(--accent);
+      background: #fff7ef;
+      padding: 16px 18px;
+      margin: 22px 0;
+      font-weight: 700;
+    }
+    .video-block {
+      margin: 28px 0 36px;
+      background: #111;
+      color: #fff;
+      padding: 18px;
+      border-radius: 14px;
+    }
+    .video-title {
+      margin: 0 0 12px;
+      font-weight: 800;
+      color: #fff;
+    }
+    .video-wrap {
+      position: relative;
+      width: 100%;
+      aspect-ratio: 16 / 9;
+      overflow: hidden;
+      border-radius: 10px;
+      background: #000;
+    }
+    .video-wrap iframe {
+      width: 100%;
+      height: 100%;
+      border: 0;
+    }
+    ul {
+      padding-left: 22px;
+      margin-top: .4em;
+    }
+    li { margin-bottom: .5em; }
+    .questions {
+      background: #f7f7f7;
+      border: 1px solid #e8e8e8;
+      border-radius: 12px;
+      padding: 20px;
+      margin: 24px 0;
+    }
+    .cta {
+      margin-top: 38px;
+      background: #111;
+      color: #fff;
+      border-radius: 16px;
+      padding: 28px;
+    }
+    .cta h2 {
+      color: #fff;
+      margin-top: 0;
+    }
+    .cta p { color: #ddd; }
+    .btn {
+      display: inline-block;
+      margin-top: 8px;
+      padding: 13px 20px;
+      border-radius: 9px;
+      background: var(--green);
+      color: #fff;
+      text-decoration: none;
+      font-weight: 800;
+    }
+    .signature {
+      margin-top: 20px;
+      font-weight: 800;
+      color: var(--accent);
+    }
+    footer {
+      text-align: center;
+      padding: 28px 20px 40px;
+      color: #666;
+      font-size: .92rem;
+    }
+    @media (max-width: 640px) {
+      .topbar .wrap { align-items: flex-start; flex-direction: column; }
+      .hero { padding-top: 44px; }
+    }
+  </style>
+</head>
+<body>
+  <header class="topbar">
+    <div class="wrap">
+      <div class="brand">ENGENHARIA <span>SEGURA</span></div>
+      <a class="home-link" href="/">← Voltar para a página inicial</a>
+    </div>
+  </header>
+
+  <section class="hero">
+    <div class="wrap">
+      <span class="eyebrow">Artigo técnico</span>
+      <h1>Arco elétrico e energia incidente: riscos, proteção e aplicação na mineração</h1>
+      <p>Entenda por que o risco de arco elétrico precisa ser tratado com engenharia, proteção adequada, análise de exposição e informação clara para quem trabalha em instalações elétricas.</p>
+    </div>
+  </section>
+
+  <main>
+    <article>
+      <h2>O arco elétrico é um risco que não pode ser ignorado</h2>
+      <p>Em instalações elétricas industriais, um acidente não precisa necessariamente envolver o contato direto de uma pessoa com uma parte energizada.</p>
+      <p>Uma falha elétrica pode produzir um <strong>arco elétrico</strong>, liberando grande quantidade de energia em um espaço muito curto de tempo.</p>
+      <p>Essa energia pode provocar queimaduras graves, projeção de partículas, pressão, ruído intenso e danos aos equipamentos.</p>
+      <p>Por isso, compreender o fenômeno e avaliar seus riscos deve fazer parte da gestão de segurança das instalações elétricas.</p>
+
+      <div class="video-block">
+        <p class="video-title">Vídeo 1 — Energia incidente e NR-10</p>
+        <div class="video-wrap">
+          <iframe src="https://www.youtube.com/embed/LSvxF4LvHro" title="Energia incidente e NR-10" loading="lazy" allowfullscreen></iframe>
+        </div>
+      </div>
+
+      <h2>O que é energia incidente?</h2>
+      <p>De forma simples, <strong>energia incidente é a quantidade de energia térmica proveniente de um arco elétrico que pode atingir uma pessoa localizada a determinada distância do evento</strong>.</p>
+      <p>O risco não depende apenas da tensão elétrica. Entre os fatores que podem influenciar a severidade de um evento estão a corrente disponível de curto-circuito, o tempo de atuação das proteções, a configuração da instalação, a distância entre o trabalhador e a fonte do arco e as características dos equipamentos.</p>
+
+      <div class="highlight">Quanto mais tempo o arco permanece, maior pode ser a exposição do trabalhador. Por isso, proteção elétrica e segurança das pessoas estão diretamente relacionadas.</div>
+
+      <h2>Arco elétrico não é a mesma coisa que choque elétrico</h2>
+      <p>No <strong>choque elétrico</strong>, existe passagem de corrente elétrica pelo corpo.</p>
+      <p>No <strong>arco elétrico</strong>, a pessoa pode sofrer consequências graves mesmo sem tocar diretamente no condutor energizado.</p>
+      <p>O arco pode gerar temperaturas extremamente elevadas, emissão de calor, luz intensa, pressão e partículas de material aquecido.</p>
+
+      <div class="video-block">
+        <p class="video-title">Vídeo 2 — O que é arco elétrico?</p>
+        <div class="video-wrap">
+          <iframe src="https://www.youtube.com/embed/shfEIp69W1g" title="Arco elétrico: riscos e proteção" loading="lazy" allowfullscreen></iframe>
+        </div>
+      </div>
+
+      <h2>Por que o tempo de atuação da proteção é tão importante?</h2>
+      <p>Imagine uma falha elétrica acontecendo dentro de um painel.</p>
+      <p>Se o sistema de proteção identifica a condição e interrompe rapidamente a alimentação, a duração do arco tende a ser menor.</p>
+      <p>Se a eliminação da falha demora, a energia liberada durante o evento pode aumentar significativamente.</p>
+      <p>Por isso, uma análise adequada não deve observar somente <strong>“qual é a corrente de curto-circuito?”</strong>. Também precisa analisar <strong>“quanto tempo a proteção levará para eliminar essa falha?”</strong>.</p>
+
+      <h2>Energia incidente na mineração</h2>
+      <p>Na mineração, o assunto ganha ainda mais importância. Uma mina a céu aberto pode possuir sistemas elétricos extensos e diferentes níveis de tensão, envolvendo, por exemplo:</p>
+      <ul>
+        <li>subestações;</li>
+        <li>redes de distribuição;</li>
+        <li>eletrocentros;</li>
+        <li>painéis de média e baixa tensão;</li>
+        <li>transformadores;</li>
+        <li>grandes motores;</li>
+        <li>escavadeiras elétricas;</li>
+        <li>perfuratrizes;</li>
+        <li>cabos móveis de mineração;</li>
+        <li>equipamentos auxiliares.</li>
+      </ul>
+      <p>Operação, inspeção e manutenção desses sistemas precisam considerar os riscos elétricos existentes em cada atividade.</p>
+
+      <div class="video-block">
+        <p class="video-title">Vídeo 3 — Aplicação na mineração</p>
+        <div class="video-wrap">
+          <iframe src="https://www.youtube.com/embed/49DwC-bCz6w" title="Risco de arco elétrico em mina a céu aberto" loading="lazy" allowfullscreen></iframe>
+        </div>
+      </div>
+
+      <h2>E onde entra o EPI?</h2>
+      <p>O EPI é extremamente importante, mas representa <strong>uma das barreiras de proteção</strong>.</p>
+      <p>O objetivo de uma boa gestão de segurança elétrica não deve ser apenas entregar uma roupa resistente ao arco. Primeiro, é necessário procurar reduzir o risco por meio de engenharia, projeto, manutenção, ajustes adequados das proteções, procedimentos e outras medidas de controle.</p>
+      <p>Depois, com o conhecimento da exposição existente, pode-se determinar a proteção adequada para a atividade.</p>
+      <div class="highlight">Não devemos escolher o EPI primeiro e tentar adaptar o risco depois. Precisamos compreender o risco.</div>
+
+      <h2>Estudo de energia incidente</h2>
+      <p>Um estudo de energia incidente permite avaliar diferentes pontos de uma instalação elétrica e compreender melhor a exposição associada a possíveis eventos de arco elétrico.</p>
+      <p>Dependendo da instalação e da metodologia utilizada, a análise pode considerar dados como correntes de curto-circuito, tempos de atuação dos dispositivos de proteção, características dos equipamentos, distâncias de trabalho e configuração do sistema elétrico.</p>
+      <p>O resultado auxilia a empresa na tomada de decisões relacionadas à engenharia, proteção, procedimentos e segurança dos trabalhadores.</p>
+
+      <h2>E a nova NR-10?</h2>
+      <p>A atualização da NR-10 reforça a importância da gestão dos riscos ocupacionais decorrentes da eletricidade e da adoção de medidas de controle adequadas às características de cada instalação e atividade.</p>
+      <p>Para empresas industriais e de mineração, isso torna ainda mais importante conhecer seus riscos elétricos, manter informações técnicas atualizadas e orientar corretamente trabalhadores, supervisores e responsáveis pelas instalações.</p>
+
+      <h2>Sua empresa conhece o risco existente nos seus painéis?</h2>
+      <div class="questions">
+        <p><strong>Os principais painéis já foram avaliados?</strong></p>
+        <p><strong>Os tempos de atuação das proteções são conhecidos?</strong></p>
+        <p><strong>As equipes conhecem os riscos das tarefas que executam?</strong></p>
+        <p><strong>Os EPIs utilizados são compatíveis com a exposição existente?</strong></p>
+        <p><strong>As informações de segurança estão disponíveis para quem opera e mantém a instalação?</strong></p>
+      </div>
+      <p>Se várias respostas forem “não sei”, existe uma oportunidade importante de melhoria.</p>
+
+      <div class="cta">
+        <h2>Engenharia Segura</h2>
+        <p>A Engenharia Segura produz conteúdo técnico sobre segurança elétrica, NR-10, mineração, manutenção e prevenção de acidentes.</p>
+        <p>Nosso objetivo é transformar conhecimento técnico em informação prática para trabalhadores, engenheiros, supervisores, gestores e empresas.</p>
+        <p class="signature">Segurança não é sorte. É escolha.</p>
+        <p><strong>Precisa avaliar os riscos elétricos da sua instalação?</strong></p>
+        <a class="btn" href="https://wa.me/5594988090727?text=Ol%C3%A1%2C%20Artur.%20Conheci%20a%20Engenharia%20Segura%20pelo%20artigo%20sobre%20energia%20incidente%20e%20gostaria%20de%20conversar%20sobre%20uma%20avalia%C3%A7%C3%A3o%20ou%20consultoria." target="_blank" rel="noopener">Falar pelo WhatsApp</a>
+      </div>
+    </article>
+  </main>
+
+  <footer>
+    Engenharia Segura — Segurança • Conhecimento • Prevenção
+  </footer>
+</body>
+</html>
