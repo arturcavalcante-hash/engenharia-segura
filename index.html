@@ -1,407 +1,325 @@
-<!doctype html>
+<!DOCTYPE html>
 <html lang="pt-BR">
 <head>
-  <meta charset="utf-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1">
-  <meta name="description" content="Engenharia Segura — segurança elétrica, NR-10, energia incidente, mineração e sistemas elétricos industriais.">
-  <title>Engenharia Segura | Artur Cavalcante</title>
-  <link rel="stylesheet" href="style.css">
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Engenharia Segura | Treinamentos e Análise Técnica NR-10</title>
+  <meta name="description" content="Guia NR-10 2027, instrução para não eletricistas e análise técnica NR-10 / PIE. Conteúdo aplicado à indústria e mineração.">
+  <style>
+    :root{
+      --bg:#0a0f1c;
+      --bg2:#121a2b;
+      --card:#ffffff;
+      --text:#101828;
+      --muted:#667085;
+      --orange:#f97316;
+      --orange-dark:#ea580c;
+      --line:#e5e7eb;
+      --soft:#fff7ed;
+      --green:#15803d;
+    }
+    *{box-sizing:border-box}
+    html{scroll-behavior:smooth}
+    body{
+      margin:0;
+      font-family:Arial,Helvetica,sans-serif;
+      color:var(--text);
+      background:#f8fafc;
+      line-height:1.5;
+    }
+    a{text-decoration:none;color:inherit}
+    .top{
+      background:#050914;
+      color:#fff;
+      text-align:center;
+      padding:9px 18px;
+      font-size:14px;
+    }
+    .nav{
+      background:#fff;
+      border-bottom:1px solid var(--line);
+      padding:16px 6vw;
+      display:flex;
+      align-items:center;
+      justify-content:space-between;
+      gap:20px;
+      position:sticky;
+      top:0;
+      z-index:10;
+    }
+    .brand{
+      font-weight:900;
+      font-size:23px;
+      letter-spacing:.3px;
+    }
+    .brand span{color:var(--orange)}
+    .nav small{color:var(--muted);font-weight:600}
+    .hero{
+      background:
+        radial-gradient(circle at 85% 20%, rgba(249,115,22,.18), transparent 26%),
+        linear-gradient(135deg,var(--bg),#172554);
+      color:#fff;
+      padding:78px 6vw 70px;
+    }
+    .wrap{max-width:1180px;margin:0 auto}
+    .hero-grid{
+      display:grid;
+      grid-template-columns:1.2fr .8fr;
+      gap:44px;
+      align-items:center;
+    }
+    .eyebrow{
+      display:inline-block;
+      color:#fed7aa;
+      background:rgba(249,115,22,.11);
+      border:1px solid rgba(249,115,22,.38);
+      padding:7px 12px;
+      border-radius:999px;
+      font-weight:800;
+      font-size:13px;
+      letter-spacing:.04em;
+    }
+    h1{
+      font-size:52px;
+      line-height:1.05;
+      margin:18px 0;
+      max-width:820px;
+    }
+    .hero p{
+      color:#dbeafe;
+      font-size:20px;
+      max-width:760px;
+      margin-bottom:28px;
+    }
+    .hero-cta{
+      display:inline-block;
+      background:var(--orange);
+      color:#fff;
+      padding:15px 24px;
+      border-radius:11px;
+      font-weight:900;
+      box-shadow:0 10px 28px rgba(249,115,22,.25);
+    }
+    .hero-card{
+      background:#fff;
+      color:var(--text);
+      padding:28px;
+      border-radius:20px;
+      box-shadow:0 20px 60px rgba(0,0,0,.30);
+    }
+    .hero-card h3{margin:0 0 14px;font-size:25px}
+    .hero-card p{color:var(--muted);font-size:16px;margin:0 0 14px}
+    .check{display:flex;gap:10px;margin:11px 0;color:#344054}
+    .check b{color:var(--green)}
+    .section{padding:72px 6vw}
+    .title{text-align:center;max-width:760px;margin:0 auto 38px}
+    .title h2{font-size:40px;margin:0 0 10px}
+    .title p{font-size:18px;color:var(--muted);margin:0}
+    .cards{
+      display:grid;
+      grid-template-columns:repeat(3,1fr);
+      gap:22px;
+    }
+    .card{
+      background:#fff;
+      border:1px solid var(--line);
+      border-radius:20px;
+      padding:28px;
+      box-shadow:0 10px 28px rgba(16,24,40,.06);
+      display:flex;
+      flex-direction:column;
+      min-height:100%;
+    }
+    .offer{
+      color:var(--orange-dark);
+      text-transform:uppercase;
+      font-weight:900;
+      font-size:12px;
+      letter-spacing:.09em;
+    }
+    .card h3{font-size:25px;line-height:1.18;margin:10px 0 12px}
+    .card p{color:var(--muted);margin:0}
+    .price{
+      font-size:35px;
+      font-weight:900;
+      margin:22px 0 6px;
+      color:#111827;
+    }
+    .price small{font-size:14px;color:var(--muted);font-weight:700}
+    .features{padding-left:20px;color:#344054;margin:18px 0 26px}
+    .features li{margin:9px 0}
+    .enroll{
+      margin-top:auto;
+      display:block;
+      width:100%;
+      text-align:center;
+      background:linear-gradient(180deg,#ff8a2b,var(--orange-dark));
+      color:#fff;
+      padding:16px 18px;
+      border-radius:10px;
+      font-size:15px;
+      font-weight:900;
+      letter-spacing:.03em;
+      box-shadow:0 8px 18px rgba(234,88,12,.22);
+      border:1px solid #c2410c;
+    }
+    .enroll:hover{filter:brightness(.96)}
+    .micro{
+      margin-top:10px;
+      color:#98a2b3;
+      font-size:12px;
+      text-align:center;
+    }
+    .highlight{
+      background:var(--soft);
+      border-top:1px solid #fed7aa;
+      border-bottom:1px solid #fed7aa;
+    }
+    .highlight-grid{
+      display:grid;
+      grid-template-columns:1fr 1fr;
+      gap:30px;
+      align-items:center;
+    }
+    .highlight h2{font-size:36px;margin:0 0 12px}
+    .highlight p{color:#475467;font-size:18px}
+    .box{
+      background:#fff;
+      border:1px solid #fed7aa;
+      border-radius:18px;
+      padding:28px;
+    }
+    .box h3{margin-top:0}
+    .contact{
+      background:var(--bg2);
+      color:#fff;
+      border-radius:20px;
+      padding:38px;
+      text-align:center;
+    }
+    .contact p{color:#cbd5e1;font-size:17px}
+    .footer{
+      background:#050914;
+      color:#cbd5e1;
+      padding:32px 6vw;
+      text-align:center;
+    }
+    .footer strong{color:#fff}
+    @media(max-width:900px){
+      .hero-grid,.cards,.highlight-grid{grid-template-columns:1fr}
+      h1{font-size:40px}
+      .nav small{display:none}
+    }
+  </style>
 </head>
 <body>
-  <header class="topbar">
-    <a class="brand" href="#inicio" aria-label="Engenharia Segura">
-      <img class="brand-emblem" src="assets/logo-oficial-emblema.png" alt="Logotipo oficial Engenharia Segura">
-      <span class="brand-text">
-        <strong>ENGENHARIA</strong><b> SEGURA</b>
-        <small>SEGURANÇA • CONHECIMENTO • PREVENÇÃO</small>
-      </span>
-    </a>
+  <div class="top">ENGENHARIA SEGURA • Segurança • Conhecimento • Prevenção</div>
 
-    <button class="menu-btn" aria-label="Abrir menu" aria-expanded="false">☰</button>
-<nav class="nav">
-  <a href="#inicio">Início</a>
-  <a id="sobre-link" href="#sobre">Sobre mim</a>
-  <a href="consultoria.html">Soluções</a>
-  <a href="#conteudos">Conteúdos</a>
-  <a href="#projetos">Projetos</a>
-  <a href="#contato">Contato</a>
-</nav>
-      
+  <header class="nav">
+    <div class="brand">ENGENHARIA <span>SEGURA</span></div>
+    <small>Treinamentos e serviços técnicos em segurança elétrica</small>
   </header>
 
-  <main id="inicio">
-    <section class="hero">
-      <div class="hero-overlay"></div>
-      <div class="hero-copy">
-        <p class="eyebrow">ENGENHARIA • SEGURANÇA • RESULTADOS</p>
-        <h1>Segurança elétrica<br>não é sorte.<br><span>É escolha.</span></h1>
-        <p class="lead">Conteúdo técnico, consultoria e treinamento em NR-10, energia incidente, mineração e sistemas elétricos industriais. Mais conhecimento. Mais prevenção. Mais vidas protegidas.</p>
-
-        <div class="hero-actions">
-          <a class="btn btn-red" href="https://www.youtube.com/@engenhariasemrisco" target="_blank" rel="noopener">▶ Assistir no YouTube</a>
-          <a class="btn btn-green" href="#contato">💬 Falar no WhatsApp</a>
-          <a class="btn btn-orange" href="https://wa.me/5594988090727?text=Ol%C3%A1%2C%20Artur.%20Conheci%20a%20Engenharia%20Segura%20pelo%20site%20e%20gostaria%20de%20solicitar%20uma%20consultoria." target="_blank" rel="noopener">▥ Solicitar consultoria</a>
-        </div>
-
-        <div class="pillars">
-          <span>🛡 Trabalho seguro</span>
-          <span>👥 Conhecimento que transforma</span>
-          <span>⚙ Prevenção sempre</span>
-          <span>📊 Resultados sustentáveis</span>
-        </div>
-      </div>
-    </section>
-
-
-    <section class="dynamic-strip" aria-label="Destaques do Engenharia Segura">
-      <div class="dynamic-track">
-        <span>⚡ NR-10</span>
-        <span>🛡 Segurança elétrica</span>
-        <span>🔥 Energia incidente</span>
-        <span>🚜 Mineração</span>
-        <span>📡 LTE e automação</span>
-        <span>🔌 Cabos de mineração</span>
-        <span>⚙ Confiabilidade</span>
-        <span>🎓 Treinamentos técnicos</span>
-      </div>
-    </section>
-
-    <section class="section grid-3" id="sobre">
-      <article class="card">
-        <p class="section-kicker">SOBRE MIM</p>
-        <h2><span>Experiência</span> que gera segurança na prática.</h2>
-        <p>Atuação em segurança elétrica, NR-10, energia incidente, mineração e sistemas elétricos industriais, transformando experiência de campo em orientação técnica clara e aplicável.</p>
-        <a class="link-btn" href="#sobre">Conheça mais sobre mim →</a>
-      </article>
-
-      <article class="card" id="consultoria">
-        <p class="section-kicker">CREDENCIAIS</p>
-        <h2>Base técnica. Confiança no resultado.</h2>
-        <div class="cred-grid">
-          <div><strong>🎓 NR-10</strong><span>Treinamento, adequação e implementação.</span></div>
-          <div><strong>⚡ Energia Incidente</strong><span>Estudos, análises e medidas de controle.</span></div>
-          <div><strong>🚜 Mineração</strong><span>Experiência em ambientes de alta criticidade.</span></div>
-          <div><strong>🏭 Sistemas Industriais</strong><span>Projetos, inspeções e consultoria técnica.</span></div>
-        </div>
-      </article>
-
-      <article class="card campaign">
-        <p class="section-kicker">CAMPANHA EM DESTAQUE</p>
-        <div class="campaign-box">
-          <p class="tag">NOVA</p>
-          <h2>NR-10</h2>
-          <p>Mais proteção. Mais responsabilidade. Um novo momento para a segurança elétrica.</p>
-          <a class="link-btn" href="#conteudos">Saiba mais →</a>
-        </div>
-      </article>
-    </section>
-
-    
-    <section class="section services-section reveal" id="servicos">
-      <p class="section-kicker">SERVIÇOS</p>
-      <h2>Como posso ajudar sua empresa?</h2>
-      <p class="services-intro">
-        Soluções técnicas para aumentar segurança, confiabilidade e conhecimento nas operações.
-      </p>
-
-      <div class="services-grid">
-        <article class="service-card">
-          <div class="service-icon">⚡</div>
-          <h3>Consultoria em NR-10 e Segurança Elétrica</h3>
-          <p>
-            Apoio técnico para avaliação de riscos, adequação documental, procedimentos,
-            diagnóstico de campo e melhoria das práticas de segurança elétrica.
-          </p>
-          <a class="service-btn" target="_blank" rel="noopener"
-             href="https://wa.me/5594988090727?text=Ol%C3%A1%2C%20Artur.%20Conheci%20a%20Engenharia%20Segura%20pelo%20site%20e%20gostaria%20de%20conversar%20sobre%20consultoria%20em%20NR-10%20e%20seguran%C3%A7a%20el%C3%A9trica.">
-            Quero conversar
-          </a>
-        </article>
-
-        <article class="service-card">
-          <div class="service-icon">🔥</div>
-          <h3>Estudo de Energia Incidente</h3>
-          <p>
-            Avaliação técnica de energia incidente, apoio à identificação de riscos,
-            medidas de controle, etiquetagem e orientação para maior proteção das equipes.
-          </p>
-          <a class="service-btn" target="_blank" rel="noopener"
-             href="https://wa.me/5594988090727?text=Ol%C3%A1%2C%20Artur.%20Conheci%20a%20Engenharia%20Segura%20pelo%20site%20e%20gostaria%20de%20conversar%20sobre%20estudo%20de%20energia%20incidente.">
-            Quero conversar
-          </a>
-        </article>
-
-        <article class="service-card">
-          <div class="service-icon">🎓</div>
-          <h3>Treinamentos e Palestras Técnicas</h3>
-          <p>
-            Conteúdo técnico e prático para profissionais, gestores e equipes,
-            com foco em prevenção, segurança elétrica, NR-10 e aplicações em campo.
-          </p>
-          <a class="service-btn" target="_blank" rel="noopener"
-             href="https://wa.me/5594988090727?text=Ol%C3%A1%2C%20Artur.%20Conheci%20a%20Engenharia%20Segura%20pelo%20site%20e%20gostaria%20de%20conversar%20sobre%20treinamentos%20ou%20palestras%20t%C3%A9cnicas.">
-            Quero conversar
-          </a>
-        </article>
-      </div>
-    </section>
-
-
-    <section class="dark-section reveal" id="treinamentos">
-      <div class="live-indicator"><span class="pulse-dot"></span> Conteúdo técnico em atualização constante</div>
+  <section class="hero">
+    <div class="wrap hero-grid">
       <div>
-        <h2>Treinamentos técnicos e práticos</h2>
-        <p>Conteúdo para profissionais, gestores e equipes que precisam compreender riscos elétricos e tomar melhores decisões no campo.</p>
-      </div>
-      <div class="stats">
-        <span><strong>NR-10</strong><small>treinamento e atualização</small></span>
-        <span><strong>Mineração</strong><small>aplicação em campo</small></span>
-        <span><strong>Energia incidente</strong><small>prevenção e controle</small></span>
-      </div>
-    </section>
-
-    <section class="section reveal" id="conteudos">
-      <p class="section-kicker">CONTEÚDOS</p>
-      <h2>Conhecimento que previne acidentes.</h2>
-      <div class="content-grid">
-        <article><h3>Segurança elétrica</h3><p>Boas práticas, riscos e controles aplicados ao ambiente industrial.</p></article>
-        <article><h3>Mineração</h3><p>Sistemas elétricos, equipamentos móveis, cabos e redes em campo.</p></article>
-        <article><h3>Tecnologia</h3><p>Automação, LTE, sensores e novas soluções para operações mais seguras.</p></article>
-      </div>
-    </section>
-
-    <section class="section alt reveal" id="projetos">
-      <p class="section-kicker">PROJETOS</p>
-      <h2>Soluções personalizadas para empresas.</h2>
-      <p>Diagnósticos, estudos, treinamentos e apoio técnico para elevar segurança, confiabilidade e desempenho.</p>
-    </section>
-<section class="section reveal" id="guia-nr10">
-  <p class="section-kicker">GUIA TÉCNICO</p>
-
-  <h2>NR-10 2027 — O que muda nos treinamentos?</h2>
-
-  <p>
-    Guia técnico comparativo para empresas, gestores e profissionais.
-    Entenda o que muda nos treinamentos da NR-10 a partir de 2027.
-  </p>
-
-  <a class="btn btn-orange" href="nr10-2027.html">
-    ACESSAR O GUIA COMPLETO
-  </a>
-</section>
-    <section class="section reveal" id="artigos">
-  <p class="section-kicker">ARTIGOS</p>
-  <h2>Conteúdo técnico para quem decide e para quem executa.</h2>
-  <p>
-    Conteúdos aprofundados sobre NR-10, segurança elétrica,
-    energia incidente, mineração e sistemas elétricos.
-  </p>
-
-  <div class="content-grid">
-    <article>
-      <h3>⚡ Arco elétrico e energia incidente</h3>
-
-      <p>
-        Entenda os riscos, as medidas de proteção e a aplicação
-        do estudo de energia incidente em instalações industriais
-        e na mineração.
-      </p>
-
-      <a class="link-btn"
-         href="artigos/energia-incidente.html">
-        Ler artigo completo →
-      </a>
-    </article>
-  </div>
-</section>
-
-    
-    
-    <section class="section featured-videos reveal" id="videos">
-      <p class="section-kicker">VÍDEOS EM DESTAQUE</p>
-      <h2>Veja a Engenharia Segura em ação.</h2>
-      <p class="featured-intro">
-        Conteúdo técnico, direto e aplicado à realidade de campo.
-        Assista, conheça o trabalho e compartilhe com sua equipe.
-      </p>
-
-      <div class="featured-video-grid">
-        <a class="featured-video-card" href="https://youtu.be/mlFkBFgbnp4" target="_blank" rel="noopener">
-          <div class="featured-thumb">
-            <img src="https://img.youtube.com/vi/mlFkBFgbnp4/hqdefault.jpg" alt="VRD em máquinas de solda">
-            <span class="featured-play">▶</span>
-          </div>
-          <div class="featured-video-copy">
-            <span class="featured-tag">SEGURANÇA ELÉTRICA</span>
-            <h3>VRD em máquinas de solda</h3>
-            <p>Por que esse recurso ajuda a reduzir o risco de choque elétrico.</p>
-            <strong>Assistir no YouTube →</strong>
-          </div>
-        </a>
-<a class="featured-video-card"
-   href="https://youtu.be/PyGD87jI-gI"
-   target="_blank"
-   rel="noopener">
-
-  <div class="featured-thumb">
-    <img src="https://img.youtube.com/vi/PyGD87jI-gI/hqdefault.jpg"
-         alt="DDR/DR: como funciona e por que ajuda a proteger contra choque elétrico">
-    <span class="featured-play">▶</span>
-  </div>
-
-  <div class="featured-video-copy">
-    <span class="featured-tag">SEGURANÇA ELÉTRICA</span>
-    <h3>DDR/DR: como funciona e por que ajuda a proteger contra choque elétrico</h3>
-    <p>Entenda de forma simples como o DDR atua e por que ele é importante para a proteção das pessoas.</p>
-    <strong>Assistir no YouTube →</strong>
-  </div>
-
-</a>
-        <a class="featured-video-card" href="https://youtu.be/7smHzeZxyQI" target="_blank" rel="noopener">
-          <div class="featured-thumb">
-            <img src="https://img.youtube.com/vi/7smHzeZxyQI/hqdefault.jpg" alt="LTE na mineração">
-            <span class="featured-play">▶</span>
-          </div>
-          <div class="featured-video-copy">
-            <span class="featured-tag">TECNOLOGIA NA MINERAÇÃO</span>
-            <h3>Por que as minas estão migrando para LTE?</h3>
-            <p>Comunicação, automação e conectividade em operações de mina.</p>
-            <strong>Assistir no YouTube →</strong>
-          </div>
-        </a>
-
-        <a class="featured-video-card" href="https://youtu.be/x5g20FWs3gs" target="_blank" rel="noopener">
-          <div class="featured-thumb">
-            <img src="https://img.youtube.com/vi/x5g20FWs3gs/hqdefault.jpg" alt="Ground Check em cabos de mineração">
-            <span class="featured-play">▶</span>
-          </div>
-          <div class="featured-video-copy">
-            <span class="featured-tag">MINERAÇÃO</span>
-            <h3>Ground Check: uma falha pode colocar vidas em risco</h3>
-            <p>Entenda a importância da supervisão de continuidade em sistemas de mina.</p>
-            <strong>Assistir no YouTube →</strong>
-          </div>
-        </a>
+        <span class="eyebrow">NOVA NR-10 • PREPARAÇÃO PARA 2027</span>
+        <h1>Conhecimento técnico que ajuda profissionais e empresas a se prepararem.</h1>
+        <p>Três soluções objetivas: atualização sobre os treinamentos da nova NR-10, instrução para não eletricistas e análise técnica de NR-10 / PIE.</p>
+        <a class="hero-cta" href="#ofertas">VER AS OFERTAS</a>
       </div>
 
-      <div class="featured-actions">
-        <a class="btn btn-red" href="https://www.youtube.com/@engenhariasemrisco" target="_blank" rel="noopener">
-          ▶ Ver todos os vídeos no YouTube
-        </a>
+      <div class="hero-card">
+        <h3>Comece pelo que você precisa</h3>
+        <p>Escolha uma das três soluções disponíveis:</p>
+        <div class="check"><b>✓</b><span>Guia NR-10 2027</span></div>
+        <div class="check"><b>✓</b><span>Instrução para não eletricistas</span></div>
+        <div class="check"><b>✓</b><span>Análise técnica NR-10 / PIE</span></div>
       </div>
-    </section>
+    </div>
+  </section>
 
-
-
-    
-    <section class="contact contact-strong reveal" id="contato">
-      <div class="contact-copy">
-        <p class="section-kicker">CONTATO</p>
-        <h2>Vamos conversar sobre segurança, engenharia e resultados?</h2>
-        <p>
-          Se sua empresa precisa de apoio em NR-10, segurança elétrica, energia incidente,
-          treinamentos ou orientação técnica, entre em contato.
-        </p>
-
-        <div class="contact-points">
-          <span>⚡ Atendimento técnico</span>
-          <span>🛡 Foco em prevenção</span>
-          <span>🏭 Aplicação prática em campo</span>
-        </div>
+  <section class="section" id="ofertas">
+    <div class="wrap">
+      <div class="title">
+        <h2>Nossas 3 ofertas</h2>
+        <p>Escolha a solução que melhor atende à sua necessidade.</p>
       </div>
 
-      <div class="contact-panel">
-        <h3>Fale com a Engenharia Segura</h3>
+      <div class="cards">
+        <article class="card">
+          <div class="offer">Oferta 1</div>
+          <h3>Guia NR-10 2027 — O que muda nos treinamentos para cada área?</h3>
+          <p>Material direto para entender o que muda nos treinamentos da nova NR-10 e qual treinamento se aplica a cada área de atuação.</p>
+          <div class="price">R$ 29,90</div>
+          <ul class="features">
+            <li>Trabalhadores autorizados em instalações elétricas</li>
+            <li>Serviços no SEP e em sua proximidade</li>
+            <li>Média e alta tensão no SEC</li>
+            <li>Áreas classificadas e situações específicas</li>
+          </ul>
+          <a class="enroll" href="/nr10-2027.html">INSCREVA-SE AQUI</a>
+          <div class="micro">Acesso à página do treinamento</div>
+        </article>
 
-        <a class="contact-channel whatsapp-channel" href="https://wa.me/5594988090727?text=Ol%C3%A1%2C%20Artur.%20Conheci%20a%20Engenharia%20Segura%20pelo%20site%20e%20gostaria%20de%20conversar%20sobre%20uma%20necessidade%20t%C3%A9cnica%20da%20minha%20empresa." target="_blank" rel="noopener">
-          <span class="contact-channel-icon">💬</span>
-          <span>
-            <strong>WhatsApp</strong>
-            <small>(94) 98809-0727</small>
-          </span>
-        </a>
+        <article class="card">
+          <div class="offer">Oferta 2</div>
+          <h3>Instrução NR-10 para não eletricistas</h3>
+          <p>Para profissionais que não executam serviços elétricos, mas trabalham próximos a instalações elétricas e precisam reconhecer riscos e precauções.</p>
+          <div class="price">R$ 97 <small>/ participante</small></div>
+          <ul class="features">
+            <li>Gestores, supervisores, mecânicos e operadores</li>
+            <li>Riscos elétricos essenciais</li>
+            <li>Cuidados em áreas próximas às instalações</li>
+            <li>Aplicação prática para indústria e mineração</li>
+          </ul>
+          <a class="enroll" href="#contato">INSCREVA-SE AQUI</a>
+          <div class="micro">Atendimento individual ou para empresas</div>
+        </article>
 
-        <a class="contact-channel" href="mailto:engenhariasemrisco@gmail.com">
-          <span class="contact-channel-icon">✉️</span>
-          <span>
-            <strong>E-mail</strong>
-            <small>engenhariasemrisco@gmail.com</small>
-          </span>
-        </a>
-
-        <a class="contact-quote-btn" href="https://wa.me/5594988090727?text=Ol%C3%A1%2C%20Artur.%20Conheci%20a%20Engenharia%20Segura%20pelo%20site%20e%20gostaria%20de%20conversar%20sobre%20uma%20necessidade%20t%C3%A9cnica%20da%20minha%20empresa." target="_blank" rel="noopener">
-          Solicitar orçamento / consultoria
-        </a>
-
-        <p class="contact-note">
-          Conte brevemente sua necessidade. Assim o atendimento já começa de forma mais objetiva.
-        </p>
+        <article class="card">
+          <div class="offer">Oferta 3</div>
+          <h3>Análise técnica NR-10 / PIE</h3>
+          <p>Análise inicial da documentação para identificar pontos de atenção, inconsistências e prioridades relacionadas à NR-10 e ao PIE.</p>
+          <div class="price">A partir de R$ 590</div>
+          <ul class="features">
+            <li>Envio prévio de documentos</li>
+            <li>Análise técnica inicial</li>
+            <li>Reunião online de até 60 minutos</li>
+            <li>Resumo dos principais achados</li>
+          </ul>
+          <a class="enroll" href="#contato">INSCREVA-SE AQUI</a>
+          <div class="micro">Valor final conforme escopo e volume documental</div>
+        </article>
       </div>
-    </section>
+    </div>
+  </section>
 
-  </main>
+  <section class="section highlight">
+    <div class="wrap highlight-grid">
+      <div>
+        <h2>Uma página comercial, sem perder a credibilidade técnica.</h2>
+        <p>Os conteúdos do Engenharia Segura continuam disponíveis, mas agora a página principal mostra imediatamente o que pode ser contratado.</p>
+      </div>
+      <div class="box">
+        <h3>Foco inicial</h3>
+        <p>Treinamentos, orientação técnica e análise documental com linguagem objetiva e aplicação voltada à realidade das empresas.</p>
+      </div>
+    </div>
+  </section>
 
-  <footer>
-    <p><strong>ENGENHARIA SEGURA</strong> • Segurança • Conhecimento • Prevenção</p>
-    <p>© <span id="year"></span> Artur Cavalcante. Todos os direitos reservados.</p>
+  <section class="section" id="contato">
+    <div class="wrap">
+      <div class="contact">
+        <h2>Quer participar ou solicitar uma análise?</h2>
+        <p>Na publicação final, os botões “INSCREVA-SE AQUI” podem ser ligados ao WhatsApp, formulário de inscrição ou página de pagamento.</p>
+      </div>
+    </div>
+  </section>
+
+  <footer class="footer">
+    <strong>Engenharia Segura</strong><br>
+    Segurança • Conhecimento • Prevenção
   </footer>
-
-  <script>
-    document.getElementById('year').textContent = new Date().getFullYear();
-    const btn = document.querySelector('.menu-btn');
-    const nav = document.querySelector('.nav');
-    btn.addEventListener('click', () => {
-      const open = nav.classList.toggle('open');
-      btn.setAttribute('aria-expanded', open);
-    });
-    document.querySelectorAll('.nav a').forEach(a => a.addEventListener('click', () => nav.classList.remove('open')));
-  </script>
-
-  <script>
-    const revealItems = document.querySelectorAll('.reveal');
-    if ('IntersectionObserver' in window) {
-      const revealObserver = new IntersectionObserver((entries) => {
-        entries.forEach((entry) => {
-          if (entry.isIntersecting) {
-            entry.target.classList.add('is-visible');
-            revealObserver.unobserve(entry.target);
-          }
-        });
-      }, { threshold: 0.12 });
-
-      revealItems.forEach((item) => revealObserver.observe(item));
-    } else {
-      revealItems.forEach((item) => item.classList.add('is-visible'));
-    }
-  </script>
-
-
-  <script>
-    document.addEventListener('DOMContentLoaded', function () {
-      const sobreLink = document.getElementById('sobre-link');
-      const sobreSection = document.getElementById('sobre');
-
-      if (sobreLink && sobreSection) {
-        sobreLink.addEventListener('click', function (event) {
-          event.preventDefault();
-
-          // Garante visibilidade mesmo se a animação reveal ainda não tiver disparado.
-          sobreSection.classList.add('is-visible');
-
-          const header = document.querySelector('.topbar');
-          const headerHeight = header ? header.offsetHeight : 80;
-          const targetY = sobreSection.getBoundingClientRect().top + window.pageYOffset - headerHeight - 12;
-
-          window.scrollTo({
-            top: targetY,
-            behavior: 'smooth'
-          });
-
-          history.replaceState(null, '', '#sobre');
-        });
-      }
-    });
-  </script>
-
 </body>
 </html>
